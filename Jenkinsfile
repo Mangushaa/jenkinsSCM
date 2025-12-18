@@ -2,14 +2,21 @@ pipeline {
     agent any
 
     stages {
+        stage("Checkout business repo") {
+            steps {
+                git 
+                    branch: 'main',
+                    url: 'https://github.com/Mangushaa/jenkins-project-test.git'
+            }
+        }
         stage('Build') {
             steps {
-                echo 'Building..'
+                sh 'mvnw package -DskipTests'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh 'mvnw test'
             }
         }
         stage('Deploy') {
