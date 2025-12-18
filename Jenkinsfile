@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvnw package -DskipTests'
+                sh './mvnw package -DskipTests'
             }
         }
         stage('Test') {
