@@ -5,7 +5,7 @@ pipeline {
         stage("Checkout business repo") {
             steps {
                 git 
-                    branch: 'main',
+                    branch: 'master',
                     url: 'https://github.com/Mangushaa/jenkins-project-test.git'
             }
         }
