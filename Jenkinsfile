@@ -4,9 +4,10 @@ pipeline {
     stages {
         stage("Checkout business repo") {
             steps {
-                git 
-                    branch: 'master',
+                git (
+                    branch: 'master', 
                     url: 'https://github.com/Mangushaa/jenkins-project-test.git'
+                )
             }
         }
         stage('Build') {
